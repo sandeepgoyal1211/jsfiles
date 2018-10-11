@@ -1,0 +1,22 @@
+<html>
+<body>
+<button type = "button" onclick = "myFunction1()">Sort alphabetically</button>
+<button type = "button" onclick = "muFunction2()">Sort numerically</button>
+<p id = "demo"></p>
+
+<script>
+var points = [40,100,25,1,20,15];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction1(){
+	points.sort();
+	document.getElementById("demo").innerHTML = points;
+}
+
+function muFunction2(){
+	points.sort(function(a, b) { return a - b });
+	document.getElementById("demo").innerHTML = points;
+}
+</script>
+</body>
+</html>
