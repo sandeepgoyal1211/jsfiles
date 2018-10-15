@@ -1,0 +1,44 @@
+<head>
+<body>
+
+<script>
+var a = [[8, 3], [2, 4], [3, 6]];
+var b = [[1, 2, 3], [4, 6, 8]];
+document.write("matrix a: <br>");
+display(a);
+document.write("matrix b: <br>");
+display(b);
+document.write("a * b = <br>");
+display(multiply(a, b));
+
+function multiply(a, b){
+	var aRows = a.length;
+	var aColumn = a[0].length;
+	var bRows = b.length;
+	var bColumn = b[0].length;
+	m = new Array(aRows);  
+  	for (var r = 0; r < aRows; r++) {
+    		m[r] = new Array(bColumn); 
+    		for (var c = 0; c < bColumn; ++c) {
+      			m[r][c] = 0;             
+      			for (var i = 0; i < aColumn; i++) {
+        			m[r][c] += a[r][i] * b[i][c];
+      			}
+    		}
+  	}
+  	return m;
+}
+
+function display(m) {
+	for (var r = 0; r < m.length; r++) {
+		document.write(m[r] + "<br>");
+	}
+	
+}
+
+</script>
+</body>
+</html>
+
+
+	
